@@ -19,13 +19,13 @@ const server = http.createServer((req, res) => {
             </ul>
         `);
     } 
-    else if (url === '/profile') {
+    else if (url === '/index') {
         // Serve profile.html
-        const filePath = path.join(__dirname, 'profile.html');
+        const filePath = path.join(__dirname, 'index.html');
         fs.readFile(filePath, (err, content) => {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('Error loading profile.html');
+                res.end('Error loading index.html');
             } else {
                 res.writeHead(200, { 'Content-Type': 'text/html' });
                 res.end(content);
